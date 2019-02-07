@@ -20,10 +20,11 @@ function validateForm(){
 
     //validate phone number
     let phoneNumber = document.forms.myForm.phoneNumber.value;
-    let phone = phoneNumber.replace(/-/g, '');
-    if(phone < 10 || phone > 15){
-    status = false;
-    document.getElementById('phoneNumber').className = "error";
+    let phone = phoneNumber.replace(/-/g,'');
+    if(phone.length < 10 || phone.length > 15){
+        status = false;
+        document.getElementById('phoneNumber').className = "error";
+  
 }
 
     //validate payment method
@@ -44,8 +45,8 @@ function validateForm(){
 
     //validate credit card
     let creditCard = document.forms.myForm.ccNumber.value;
-    let credit = creditCard.replace(/ /g, '');
-    if(credit != 15){
+    let credit = creditCard.replace(/ /g,'');
+    if(credit.length != 15){
     status = false;
     document.getElementById('ccNumber').className = "error";
 }
